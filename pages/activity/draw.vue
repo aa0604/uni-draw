@@ -123,6 +123,7 @@
 
         setTimeout(() => {
           uni.showModal({content: this.list[index].isNoPrize ? '抱歉，您未中奖' : '恭喜，中奖'})
+          this.btnDisabled = '';
           // document.getElementById('zhuanpano').style=''
         }, duration + 1000)
 
@@ -294,6 +295,15 @@
         border-style: solid;
         border-color: transparent;
         border-bottom-color: #e44025;
+    }
+    .canvas-btn.disabled {
+        pointer-events: none;
+        background: #b07a7b;
+        color: #ccc;
+    }
+
+    .canvas-btn.disabled::after {
+        border-bottom-color: #b07a7b;
     }
 
 
